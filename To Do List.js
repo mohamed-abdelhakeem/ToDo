@@ -82,3 +82,4 @@ setInterval(() => {
     (el) => (el.style.color = window.localStorage.getItem("color"))
   );
 }, 0);
+console.log("Changing for GitHub");
