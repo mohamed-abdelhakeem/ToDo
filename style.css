@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Local Storage practice: */
+
+.colors-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  gap: 16px;
+  background-color: #fefefe;
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.colors-box label {
+  font-size: 1.6em;
+  transition: .3s;
+}
+
+.colors {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.colors li {
+  width: 50px;
+  height: 50px;
+  border-radius: 59%;
+  cursor: pointer;
+}
+
+.colors li:nth-child(1) {
+  background-color: red;
+}
+
+.colors li:nth-child(2) {
+  background-color: blue;
+}
+
+.colors li:nth-child(3) {
+  background-color: orange;
+}
+
+.colors li:nth-child(4) {
+  background-color: brown;
+}
+
+
+/* To Do List: */
+
+.container {
+  width: min(800px, 85%);
+  padding: 20px;
+  margin: 10px auto;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  text-align: center;
+  transition: .3s;
+}
+
+.container .form {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.container .form input {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  font-size: 1.3rem;
+  transition: .3s;
+}
+
+.container .form input:focus {
+  border: none;
+  outline: none;
+}
+
+.container .form #add {
+  min-width: 120px;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1.2rem;
+  color: #f2f2f2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+  display: block;
+  letter-spacing: 1.1px;
+}
+
+.container .form #add:hover {
+  opacity: .85;
+}
+
+.container .tasks-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: .3s;
+}
+
+.container .tasks-box div {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  transition: .3s;
+}
+
+.container .tasks-box div:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.container .tasks-box div:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.container .tasks-box div p {
+  font-size: 1.4em;
+  transition: .3s;
+}
+
+body {
+  counter-reset: task;
+}
+
+.container .tasks-box div p::before {
+  counter-increment: task;
+  content: counter(task) "- ";
+  font-weight: bold;
+  letter-spacing: 1.1px;
+}
+
+.container .tasks-box div span {
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 8px;
+  letter-spacing: 1.2px;
+  transition: .3s;
+}
+
+.container #delAll {
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1.2rem;
+  color: #f2f2f2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+  letter-spacing: 1.2px;
+  margin: 10px auto 0;
+}
+
+@media (max-width : 700px) {
+  .container {
+    min-width: 85%;
+  }
+
+  .container .form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .container .tasks-box div p {
+    font-size: 1.1em;
+  }
+  .colors-box {
+    transform: scale(.7);
+  }
+}
